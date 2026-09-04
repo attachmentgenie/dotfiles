@@ -12,6 +12,8 @@
 [pull]
 	autoSetupRemote = true
 
+[includeIf "gitdir:~/.local/share/"]
+	path = ~/DevShed/Projects/attachmentgenie/.gitconfig
 [includeIf "gitdir:~/DevShed/Projects/atcprojectio/"]
         path = ~/DevShed/Projects/atcprojectio/.gitconfig
 [includeIf "gitdir:~/DevShed/Projects/attachmentgenie/"]
@@ -23,7 +25,7 @@
 [includeIf "gitdir:~/DevShed/Projects/icinga/"]
         path = ~/DevShed/Projects/icinga/.gitconfig
 [includeIf "gitdir:~/Devshed/StufisGeneralis/"]
-        path = ~/Devshed/StufisGeneralis/.gitconfig
+        path = ~/DevShed/Projects/attachmentgenie/.gitconfig
 [alias]
 	tag = tag -s
 [init]
