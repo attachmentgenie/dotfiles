@@ -1,0 +1,26 @@
+.DS_Store
+
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+.idea/
+.kitchen/
+.project
+.buildpath
+.bundle/
+.yardwarns
+.settings/
+.tmp/
+.librarian/
+.vagrant/
+.yardoc/
+checksums
+complete
+doc/
+*.lock
+object_types
+proxy_types
+strings.json
+# java
+target/
