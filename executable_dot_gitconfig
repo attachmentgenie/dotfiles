@@ -1,7 +1,7 @@
 [user]
 	name = Bram Vogelaar
 [core]
-	excludesfile = /Users/attachmentgenie/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vi
 [status]
 	submodulesummary = true
@@ -14,23 +14,19 @@
 
 [includeIf "gitdir:~/.local/share/"]
 	path = ~/DevShed/Projects/attachmentgenie/.gitconfig
+[includeIf "gitdir:~/Devshed/StufisGeneralis/"]
+        path = ~/DevShed/Projects/attachmentgenie/.gitconfig
+[includeIf "gitdir:~/DevShed/Projects/attachmentgenie/"]
+        path = ~/DevShed/Projects/attachmentgenie/.gitconfig
+
 [includeIf "gitdir:~/DevShed/Projects/atcprojectio/"]
         path = ~/DevShed/Projects/atcprojectio/.gitconfig
-[includeIf "gitdir:~/DevShed/Projects/attachmentgenie/"]
-	path = ~/DevShed/Projects/attachmentgenie/.gitconfig
-[includeIf "gitdir:~/Devshed/Projects/devopsdays/"]
-        path = ~/Devshed/Projects/devopsdays/.gitconfig
 [includeIf "gitdir:~/DevShed/Projects/teambla/"]
 	path = ~/DevShed/Projects/teambla/.gitconfig
 [includeIf "gitdir:~/DevShed/Projects/icinga/"]
         path = ~/DevShed/Projects/icinga/.gitconfig
-[includeIf "gitdir:~/Devshed/StufisGeneralis/"]
-        path = ~/DevShed/Projects/attachmentgenie/.gitconfig
 [alias]
 	tag = tag -s
 [init]
 	defaultBranch = main
 	templateDir = /Users/attachmentgenie/.git-template
-[safe]
-	directory = /opt/puppetlabs/pdk/share/cache/pdk-templates.git
-	directory = /opt/puppetlabs/pdk/share/cache/pdk-templates.git
