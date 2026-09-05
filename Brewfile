@@ -126,8 +126,6 @@ brew "hashicorp/tap/nomad-pack"
 brew "minamijoyo/hcledit/hcledit"
 # Pulumi - Modern Infrastructure as Code. Any cloud, any language 
 brew "pulumi/tap/pulumi"
-# The tfswitch command lets you switch between terraform versions.
-brew "warrensbox/tap/tfswitch", link: false
 # The tgswitch command lets you switch between terragrunt versions.
 brew "warrensbox/tap/tgswitch"
 # Password manager that keeps all passwords secure behind one password
