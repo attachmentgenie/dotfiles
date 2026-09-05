@@ -14,6 +14,14 @@ if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
     ssh-keygen -t ed25519 -C "${EMAIL}" -f "$HOME/.ssh/id_ed25519" -N ""
 fi
 
+# Generate GPG key if gpg is installed and key is missing
+if command -v gpg >/dev/null 2>&1; then
+    if ! gpg --list-secret-keys "${EMAIL}" >/dev/null 2>&1; then
+        echo "==> Generating GPG key for ${FULL_NAME} (${EMAIL})..."
+        gpg --batch --passphrase '' --quick-generate-key "${FULL_NAME} <${EMAIL}>" default default never
+    fi
+fi
+
 # Ensure local bin directory exists
 mkdir -p "$HOME/.local/bin"
 export PATH="$HOME/.local/bin:$PATH"
@@ -25,4 +33,4 @@ if ! command -v chezmoi >/dev/null 2>&1; then
 fi
 
 echo "==> Applying dotfiles repository..."
-exec chezmoi init --apply --ssh "${GITHUB_USER}"
+exec chezmoi init --apply "${GITHUB_USER}"
