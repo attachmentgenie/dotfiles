@@ -4,7 +4,7 @@ set -e
 
 GITHUB_USER="attachmentgenie"
 FULL_NAME="Bram Vogelaar"
-EMAIL="bram@example.com"
+EMAIL="bram@attachmentgenie.com"
 
 echo "==> Initializing workstation setup for ${FULL_NAME} (${EMAIL})..."
 
