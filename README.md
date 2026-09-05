@@ -1,13 +1,17 @@
 # Dotfiles Scaffolding
 
-Maintained by **Bram Vogelaar** ([@bramv](https://github.com/bramv)) - *bram@example.com*
-
 ## Quick Start
 
 Execute the automated bootstrap script:
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/bramv/dotfiles/main/bootstrap.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/attachmentgenie/dotfiles/main/bootstrap.sh)"
+```
+
+Or initialize directly with chezmoi using SSH:
+
+```bash
+chezmoi init --apply --ssh attachmentgenie
 ```
 
 ## Features

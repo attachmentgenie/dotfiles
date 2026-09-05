@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
-# Automated Bootstrap Script for Bram Vogelaar (bramv)
+# Automated Bootstrap Script for Bram Vogelaar (attachmentgenie)
 set -e
 
-GITHUB_USER="bramv"
+GITHUB_USER="attachmentgenie"
 FULL_NAME="Bram Vogelaar"
 EMAIL="bram@example.com"
 
@@ -25,4 +25,4 @@ if ! command -v chezmoi >/dev/null 2>&1; then
 fi
 
 echo "==> Applying dotfiles repository..."
-exec chezmoi init --apply "${GITHUB_USER}"
+exec chezmoi init --apply --ssh "${GITHUB_USER}"
