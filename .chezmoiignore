@@ -1,3 +1,7 @@
+.git
+.gitignore
+.chezmoiexternal.toml.format
+bootstrap.sh
 LICENSE
 README.md
 

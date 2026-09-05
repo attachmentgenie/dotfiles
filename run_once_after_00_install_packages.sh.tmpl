@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Package Manager Migration Lifecycle Script
+
+{{ if eq .chezmoi.os "darwin" -}}
+echo "==> MacOS detected: Installing core Homebrew packages..."
+if ! command -v brew >/dev/null 2>&1; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+brew install chezmoi git zsh gh
+{{ else -}}
+echo "==> Linux detected: Keeping standalone ~/.local/bin binary."
+{{ end -}}
