@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Package Manager Migration Lifecycle Script
+set -e
+
+{{ if eq .chezmoi.os "darwin" -}}
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
+if ! command -v brew >/dev/null 2>&1; then
+    echo "==> Homebrew not found. Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+fi
+
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+echo "==> Installing packages from managed Brewfile..."
+brew bundle --file={{ joinPath .chezmoi.sourceDir "Brewfile" | quote }}
+{{ else -}}
+echo "==> Linux detected: Keeping standalone ~/.local/bin binary."
+{{ end -}}

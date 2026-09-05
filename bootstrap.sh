@@ -22,9 +22,14 @@ if command -v gpg >/dev/null 2>&1; then
     fi
 fi
 
-# Ensure local bin directory exists
+# Ensure local bin directory exists and Homebrew is in PATH
 mkdir -p "$HOME/.local/bin"
 export PATH="$HOME/.local/bin:$PATH"
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 # Install chezmoi locally if not present
 if ! command -v chezmoi >/dev/null 2>&1; then

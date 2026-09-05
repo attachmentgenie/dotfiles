@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# GPG Key Generation Lifecycle Script
+set -e
+
+export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
+
+FULL_NAME="Bram Vogelaar"
+EMAIL="bram@attachmentgenie.com"
+
+if command -v gpg >/dev/null 2>&1; then
+    if ! gpg --list-secret-keys "${EMAIL}" >/dev/null 2>&1; then
+        echo "==> Generating GPG key for ${FULL_NAME} (${EMAIL})..."
+        gpg --batch --passphrase '' --quick-generate-key "${FULL_NAME} <${EMAIL}>" default default never
+    fi
+fi
