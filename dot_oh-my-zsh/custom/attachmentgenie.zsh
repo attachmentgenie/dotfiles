@@ -21,5 +21,3 @@ alias tc='rm -rf .terraform *.tfstate *.tfstate.backup'
 
 # proxy settings
 export no_proxy='127.0.0.1,localhost,.vagrant,.intranet,.local,.lab'
-
-neofetch
